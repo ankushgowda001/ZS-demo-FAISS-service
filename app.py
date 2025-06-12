@@ -68,5 +68,5 @@ def ingest():
     return jsonify({'message': 'Text ingested and chunked', 'chunks_added': len(new_chunks)})
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5005))
+    port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
