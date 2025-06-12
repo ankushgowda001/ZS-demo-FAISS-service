@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
 documents = [
     "ZS Sciences is a biopharmaceutical company that discovers, develops, and commercializes therapeutics.",
