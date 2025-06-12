@@ -3,6 +3,7 @@ from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 import re
+import os
 
 app = Flask(__name__)
 
@@ -67,4 +68,5 @@ def ingest():
     return jsonify({'message': 'Text ingested and chunked', 'chunks_added': len(new_chunks)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5005)
+    port = int(os.environ.get('PORT', 5005))  # 5005 is fallback for local dev
+    app.run(host='0.0.0.0', port=port)
