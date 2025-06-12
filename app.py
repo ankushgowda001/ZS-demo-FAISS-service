@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 
-model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
 documents = [
     "ZS Sciences is a biopharmaceutical company that discovers, develops, and commercializes therapeutics.",
@@ -68,5 +68,5 @@ def ingest():
     return jsonify({'message': 'Text ingested and chunked', 'chunks_added': len(new_chunks)})
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 10000))
+    port = int(os.environ.get('PORT', 5005))
     app.run(host='0.0.0.0', port=port)
